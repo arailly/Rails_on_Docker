@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker-compose run web rails new . --force --database=postgresql
+docker-compose run --rm web rails new . --force --database=postgresql
 sudo chown -R $USER .
 
 cat <<EOF> ./config/database.yml
@@ -23,5 +23,5 @@ test:
 EOF
 
 docker-compose build
-docker-compose up
-docker-compose run web rails db:create
+docker-compose up -d
+docker-compose run --rm web rails db:create
