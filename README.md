@@ -8,10 +8,6 @@ Rails on Docker
 Execute following commands:
 ```
 >> docker-compose run web rails new . --force --database=postgresql
->> sudo chown -R $USER .
->> docker-compose build
->> docker-compose up
->> docker-compose run web rails db:create
 ```
 
 And Replace the contents of config/database.yml with the followings:
@@ -32,6 +28,14 @@ development:
 test:
   <<: *default
   database: myapp_test
+```
+
+Execute following commands:
+```
+>> sudo chown -R $USER .
+>> docker-compose build
+>> docker-compose up
+>> docker-compose run web rails db:create
 ```
 
 #### Resume Develop
