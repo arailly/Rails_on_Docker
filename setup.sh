@@ -1,6 +1,6 @@
 #!/bin/bash
 
-docker-compose run --rm web rails new . --force --database=postgresql
+docker-compose run --rm web rails new . --database=postgresql
 sudo chown -R $USER .
 
 cat <<EOF> ./config/database.yml
